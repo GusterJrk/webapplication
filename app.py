@@ -1,14 +1,15 @@
 # Ao abrir o GitPod, execute:
 # pip intall -r requirements.txt
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
+
+
 @app.route('/')
 def hello():
-    return 'Hello World'
+    return render_template('index.html', nomes=['Calvo', 'Deizy', 'Igor'])
 
-app.run()
-
-print('Olá mundo')
+app.run(debug=True)
